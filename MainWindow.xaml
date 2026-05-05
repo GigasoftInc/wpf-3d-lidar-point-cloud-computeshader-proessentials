@@ -1,0 +1,15 @@
+<Window x:Class="MtTamalpaisLidar3D.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Gigasoft="clr-namespace:Gigasoft.ProEssentials;assembly=Gigasoft.ProEssentialsWpf"
+        mc:Ignorable="d"
+        Title="ProEssentials — Mt. Tamalpais LiDAR — 3D Scatter ComputeShader"
+        Height="900" Width="1600"
+        MinHeight="600" MinWidth="900"
+        UseLayoutRounding="True">
+    <Grid>
+        <Gigasoft:Pe3doWpf x:Name="Pe3do1" Loaded="Pe3do1_Loaded" />
+    </Grid>
+</Window>

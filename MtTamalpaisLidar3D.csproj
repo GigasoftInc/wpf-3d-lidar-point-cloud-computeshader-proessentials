@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <NoWarn>$(NoWarn);NETSDK1206</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      ProEssentials 10.0.0.24 introduced the GPU ComputeShader path for
+      PolyMode = Scatter. The project will run on earlier 10.x versions but
+      construction time degrades from ~instant to several seconds on this
+      dataset. 10.0.0.24 is the recommended minimum; the open-ended range
+      pulls newer patch releases automatically.
+    -->
+    <PackageReference Include="ProEssentials.Chart.Net80.x64.Wpf" Version="10.0.0.24" />
+  </ItemGroup>
+
+  <!-- Copy native DLL to output directory -->
+  <Target Name="CopyNativeDll" AfterTargets="Build">
+    <Copy
+      SourceFiles="$(OutDir)runtimes\win7-x64\native\PEGRP64H.DLL"
+      DestinationFolder="$(OutDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Copy LiDAR data file to output directory -->
+  <ItemGroup>
+    <Content Include="data\mttam_lidar.bin">
+      <Link>mttam_lidar.bin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
