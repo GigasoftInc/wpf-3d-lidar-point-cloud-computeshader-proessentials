@@ -309,7 +309,8 @@ namespace MtTamalpaisLidar3D
             // paste new values here.
             Pe3do1.PeFunction.SetLight(0, 4.06F, -5.42F, 8.13F);
             Pe3do1.PePlot.Option.LightStrength = 0.65F;
-
+            Pe3do1.PePlot.Option.BackLight = 10;
+            
             // ===================================================================
             // Step 8 — Visual styling
             // ===================================================================
