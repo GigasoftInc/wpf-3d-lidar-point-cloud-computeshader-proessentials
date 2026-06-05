@@ -16,10 +16,10 @@
       ProEssentials 10.0.0.24 introduced the GPU ComputeShader path for
       PolyMode = Scatter. The project will run on earlier 10.x versions but
       construction time degrades from ~instant to several seconds on this
-      dataset. 10.0.0.24 is the recommended minimum; the open-ended range
+      dataset. 10.0.0.26 is the recommended minimum; the open-ended range
       pulls newer patch releases automatically.
     -->
-    <PackageReference Include="ProEssentials.Chart.Net80.x64.Wpf" Version="10.0.0.24" />
+    <PackageReference Include="ProEssentials.Chart.Net80.x64.Wpf" Version="10.0.0.26" />
   </ItemGroup>
 
   <!-- Copy native DLL to output directory -->
